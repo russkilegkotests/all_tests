@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    background: #22223a;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    padding: 50px 0;
+}
+  
+  .container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .block {
+    max-width: 350px;
+    min-width: 350px;
+    min-height: 300px;
+    transition: transform 0.3s ease;
+  }
+  .block:hover {
+    transform: translateY(-20px);
+  }
+  
+  .block__image {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* -o-object-fit: cover; */
+    object-fit: cover;
+    height: 215px;
+
+    background-color: #6698ff;
+    padding: 10px;
+  }
+
+.block__title {
+    text-align: center;
+}
+  
+  .block__image-inner {
+    height: 215px;
+    border-radius: 10px 10px 0 0;
+    /* background-color: #FDD7E4; */
+  }
+
+  .block__image-inner a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .block__button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
+    padding: 15px;
+    background: #ffffff;
+    color: #000000;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.5s ease;
+  }
+  .block__button:hover {
+    color: #FF3F3A;
+  }
+  .block__button:hover .arrow-link {
+    transform: translateX(6px);
+  }
+  
+  .arrow-link {
+    margin-left: 10px;
+    transition: all 0.5s ease;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @media (max-width: 1220px) {
+    .container {
+      grid-template-columns: repeat(2, 350px);
+    }
+  }
+  @media (max-width: 820px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 412px) {
+    .ideas-list {
+      flex-direction: column;
+      border-radius: 20px;
+    }
+    .link {
+      font-size: 20px;
+    }
+    .block {
+      min-width: 80%;
+    }
+  }
