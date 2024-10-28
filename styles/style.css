@@ -11,7 +11,7 @@ body {
     padding: 50px 0;
 }
   
-  .container {
+.container {
     max-width: 1250px;
     margin: 0 auto;
     padding: 0 40px;
@@ -21,41 +21,66 @@ body {
     justify-content: center;
     align-items: center;
     gap: 40px;
-  }
-  
-  .block {
-    max-width: 350px;
-    min-width: 350px;
-    min-height: 300px;
-    transition: transform 0.3s ease;
-  }
-  .block:hover {
-    transform: translateY(-20px);
-  }
-  
-  .block__image {
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* -o-object-fit: cover; */
-    object-fit: cover;
-    height: 215px;
-
-    background-color: #6698ff;
-    padding: 10px;
-  }
-
-.block__title {
-    text-align: center;
 }
   
-  .block__image-inner {
-    height: 215px;
-    border-radius: 10px 10px 0 0;
-    /* background-color: #FDD7E4; */
-  }
+.block {
+  position: relative;
+  max-width: 350px;
+  min-width: 350px;
+  min-height: 300px;
+  transition: transform 0.3s ease;
+}
+
+.block-closed {
+  filter: blur(2.5px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.block__image {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  height: 215px;
+  
+  background-color: #6698ff;
+  padding: 10px;
+}
+
+.block:hover {
+  transform: translateY(-20px);
+}
+
+.block__title {
+  text-align: center;
+}
+
+.block__image-inner {
+  height: 215px;
+  border-radius: 10px 10px 0 0;
+}
+
+.block__overlay-text {
+  width: 90%;
+  height: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 37%; /* Расположение по вертикали */
+  left: 50%; /* Расположение по горизонтали */
+  transform: translate(-50%, -50%); /* Центрирование текста */
+  background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон для читаемости */
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
 
   .block__image-inner a {
     text-decoration: none;
@@ -75,6 +100,12 @@ body {
     font-weight: 600;
     text-decoration: none;
     transition: all 0.5s ease;
+  }
+
+  .block__button.block-closed {
+    filter: blur(2.5px);
+    pointer-events: none;
+    user-select: none;
   }
   .block__button:hover {
     color: #FF3F3A;
